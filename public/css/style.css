@@ -7,6 +7,8 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  background: #000000 url(../img/background.jpg) repeat fixed left top;
+  background-size: 100%;
 }
 h2,
 h3,
@@ -76,26 +78,37 @@ hr {
   transition: all 0.8s;
 }
 #menu.navbar-default {
-  background-color: #fff;
+  background: #1d1d1d none repeat center center;
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0 !important;
 }
-#menu a.navbar-brand {
-  font-family: "Raleway", sans-serif;
+#menu img.logo {
+  max-width: 80px;
+  float: inline-start;
+  padding-left: 0 !important;
+}
+#menu h4.sigle {
+  font-family: "Lucida Bright Regular";
+  font-size: 18px;
+  color: #ffffff;
+  padding-left: 0 !important;
+  font-weight: normal !important;
+}
+#menu p.navbar-brand {
+  font-family: "Lucida Bright Std Regular";
   font-size: 24px;
-  font-weight: 700;
   color: #333;
-  text-transform: uppercase;
 }
 #menu.navbar-default .navbar-nav > li > a {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  color: #555;
-  font-size: 15px;
-  font-weight: 400;
-  padding: 8px 2px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
   border-radius: 0;
-  margin: 9px 20px 0;
+  margin: 0 30px;
+  padding-top: 40px;
 }
 #menu.navbar-default .navbar-nav > li > a:after {
   display: block;
@@ -104,7 +117,7 @@ hr {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, #564847 0%, #B7625D 100%);
   content: "";
   transition: width 0.2s;
 }
@@ -125,7 +138,7 @@ hr {
   bottom: -1px !important;
   width: 100% !important;
   height: 2px !important;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%) !important;
+  background: linear-gradient(to right, #564847 0%, #B7625D 100%) !important;
   content: "" !important;
   transition: width 0.2s !important;
 }
@@ -152,7 +165,7 @@ hr {
 .section-title h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: linear-gradient(to right, #B7625D 0%, #564847 100%);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -166,8 +179,8 @@ hr {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   color: #fff;
-  background-color: #5ca9fb;
-  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background-color: #B7625D;
+  background-image: linear-gradient(to right, #B7625D 0%, #564847 100%);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -184,7 +197,7 @@ hr {
 .btn-custom.active {
   color: #fff;
   background-image: none;
-  background-color: #6372ff;
+  background-color: #564847;
 }
 .btn:active,
 .btn.active {
@@ -204,19 +217,12 @@ a:focus,
   outline-offset: none;
 }
 /* Header Section */
-.intro {
-  display: table;
-  width: 100%;
-  padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+.intro-img {
+  width:auto;
+  height: 100%;
 }
-.intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+.container-intro-img {
+  max-height: 700px !important;
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
@@ -229,7 +235,7 @@ a:focus,
 }
 .intro h1 span {
   font-weight: 800;
-  color: #5ca9fb;
+  color: #B7625D;
 }
 .intro p {
   color: #fff;
@@ -244,115 +250,69 @@ header .intro-text {
   padding-bottom: 200px;
   text-align: center;
 }
-/* Features Section */
-#features {
-  background: #f6f6f6;
-}
-#features i.fa {
-  font-size: 38px;
-  margin-bottom: 20px;
-  transition: all 0.5s;
-  color: #fff;
-  width: 100px;
-  height: 100px;
-  padding: 30px 0;
-  border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-}
-/* About Section */
-#about {
+/* Section Présentation */
+#presentation {
   padding: 100px 0;
 }
-#about h3 {
+#presentation h3 {
   font-size: 22px;
   margin: 0 0 20px;
+  color: #fff !important;
 }
-#about h2 {
+#presentation h2 {
   position: relative;
   margin-bottom: 15px;
   padding-bottom: 15px;
+  color: #fff !important;
+  font-weight: 600 !important;
 }
-#about h2::after {
+#presentation h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: linear-gradient(to right, #B7625D 0%, #564847 100%);
   height: 4px;
   width: 60px;
   bottom: 0;
   left: 0;
 }
-#about .about-text li {
+#presentation .presentation-text li {
   margin-bottom: 6px;
   margin-left: 6px;
   list-style: none;
   padding: 0;
+  color: #fff !important;
 }
-#about .about-text li:before {
+#presentation .presentation-text li:before {
   content: "\f00c";
   font-family: "FontAwesome";
-  color: #5ca9fb;
+  color: #B7625D;
   font-size: 11px;
   font-weight: 300;
   padding-right: 8px;
 }
-#about img {
+#presentation img {
   width: 520px;
   margin-top: 10px;
   background: #fff;
-  border-right: 0;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+  filter: grayscale();
+  border: 1px solid #fff;
 }
-#about p {
+#presentation p {
   line-height: 24px;
   margin: 30px 0;
-}
-/* Services Section */
-#services {
-  padding: 100px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  color: #fff;
-}
-#services .service-desc {
-  margin: 10px 10px 20px;
-}
-#services h2 {
-  color: #fff;
-}
-#services .section-title h2::after {
-  position: absolute;
-  content: "";
-  background: rgba(255, 255, 255, 0.3);
-  height: 4px;
-  width: 60px;
-  bottom: 0;
-  margin-left: -30px;
-  left: 50%;
-}
-#services i.fa {
-  font-size: 42px;
-  width: 120px;
-  height: 120px;
-  padding: 40px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  border-radius: 50%;
-  color: #fff;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-}
-#services h3 {
-  font-weight: 500;
-  padding: 5px 0;
-  color: #fff;
-}
-#services p {
-  color: rgba(255, 255, 255, 0.75);
-}
-#services .service-desc {
-  margin-bottom: 40px;
+  color: #fff !important;
 }
 /* Portfolio Section */
 #portfolio {
-  padding: 100px 0;
+  padding: 0 0 100px 0;
+}
+#portfolio h2 {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+#portfolio p {
+  color: #fff !important;
 }
 .portfolio-item {
   margin: 1px -15px 0 -14px;
@@ -368,99 +328,31 @@ header .intro-text {
   text-align: center;
   margin: 0 auto;
   color: #fff;
-  background: linear-gradient(
-    to right,
-    rgba(99, 114, 255, 0.8) 0%,
-    rgba(92, 169, 251, 0.8) 100%
-  );
   padding: 30% 0 0;
   height: 100%;
   width: 100%;
   opacity: 0;
   transition: all 0.5s;
 }
-.hover-bg .hover-text > h4 {
-  opacity: 0;
-  color: #fff;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  transition: all 0.3s;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.hover-bg:hover .hover-text > h4 {
-  opacity: 1;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
+
 .hover-bg:hover .hover-text {
   opacity: 1;
 }
-/* Testimonials Section */
-#testimonials {
-  padding: 100px 0;
-  background: #f6f6f6;
+
+.hover-bg .small-img {
+  width:100%;
+  height: auto;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
 }
-#testimonials i {
-  color: #e6e6e6;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-.testimonial {
-  position: relative;
-  padding: 20px;
-}
-.testimonial-image {
-  float: left;
-  margin-right: 15px;
-}
-.testimonial-image,
-.testimonial-image img {
-  display: block;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
-.testimonial-content {
-  position: relative;
-  overflow: hidden;
-}
-.testimonial-content p {
-  margin-bottom: 0;
-  font-size: 14px;
-  font-style: italic;
-}
-.testimonial-meta {
-  margin-top: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #666;
-}
-/* Team Section */
-#team {
-  padding: 100px 0;
-}
-#team h4 {
-  margin: 5px 0;
-}
-#team .team-img {
-  width: 240px;
-}
-#team .thumbnail {
-  background: transparent;
-  border: 0;
-}
-#team .thumbnail .caption {
-  padding: 10px 0 0;
-  color: #888;
+.hover-bg:hover .small-img {
+  transform: scale(1.2);
 }
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: #1d1d1d none repeat center center;
   color: rgba(255, 255, 255, 0.75);
 }
 #contact .section-title {
@@ -474,6 +366,7 @@ header .intro-text {
   margin-top: 10px;
   margin-bottom: 15px;
   padding-bottom: 15px;
+  font-weight: 600 !important;
 }
 #contact .section-title h2::after {
   position: absolute;
@@ -600,7 +493,32 @@ label {
 }
 
 @media (max-width: 768px) {
-  #about img {
+  #presentation img {
     margin: 50px 0;
   }
+}
+
+/* Modal styles */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  margin-top: 100px;
+  overflow: auto;
+  position: relative;
+}
+
+.modal-content-image {
+  position: relative;
+  max-width: 60%;
+  height: auto;
 }
