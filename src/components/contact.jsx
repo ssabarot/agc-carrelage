@@ -3,34 +3,48 @@ import emailjs from "emailjs-com";
 import React from "react";
 
 const initialState = {
-  name: "",
-  email: "",
+  from_name: "",
+  reply_to: "",
   message: "",
 };
+
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+
+  const [{ from_name, reply_to, message }, setState] = useState(initialState);
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+
   const clearState = () => setState({ ...initialState });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    if (!from_name || !reply_to || !message) {
+      setStatus("Tous les champs sont obligatoires.");
+      return;
+    }
+
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .sendForm(serviceId, templateId, e.target, userId)
       .then(
         (result) => {
           console.log(result.text);
+          setStatus("Message envoyé avec succès !");
           clearState();
         },
         (error) => {
           console.log(error.text);
+          setStatus("Échec de l'envoi du message. Veuillez réessayer.");
         }
       );
   };
+
   return (
     <div>
       <div id="contact">
@@ -50,7 +64,7 @@ export const Contact = (props) => {
                       <input
                         type="text"
                         id="name"
-                        name="name"
+                        name="from_name"
                         className="form-control"
                         placeholder="Nom"
                         required
@@ -64,7 +78,7 @@ export const Contact = (props) => {
                       <input
                         type="email"
                         id="email"
-                        name="email"
+                        name="reply_to"
                         className="form-control"
                         placeholder="Email"
                         required
@@ -86,7 +100,7 @@ export const Contact = (props) => {
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
-                <div id="success"></div>
+                <div id="success">{status && <p>{status}</p>}</div>
                 <button type="submit" className="btn btn-custom btn-lg">
                   Envoyer
                 </button>
@@ -126,17 +140,14 @@ export const Contact = (props) => {
             </div>
           </div>
         </div>
-      </div>
-      {/* <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
+        <div id="footer" className="footer-style">
+          <div className="container text-center">
+            <p>
+              &copy; 2024 Site web développé par <a href="https://www.linkedin.com/in/ssabarot" target="_blank" rel="noopener noreferrer">Sophie Sabarot</a>
+            </p>
+          </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

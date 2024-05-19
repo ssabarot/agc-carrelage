@@ -28,12 +28,12 @@ const renderSlides = imageData.map((image) => (
   ));
 
 export const Header = (props) => {
-
 const [currentIndex, setCurrentIndex] = useState();
 
 const handleChange = (index) => {
   setCurrentIndex(index);
 }
+
   return (
     <header id="header">      
         <Carousel

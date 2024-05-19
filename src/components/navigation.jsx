@@ -1,59 +1,66 @@
 import React, { useState, useEffect } from "react";
 
 export const Navigation = (props) => {
-  const [activeTab, setActiveTab] = useState("presentation");
+  const [activeTab, setActiveTab] = useState("");
 
   const handleTabClick = (event, tabId) => {
+    event.preventDefault(); // Prevent default anchor behavior
     setActiveTab(tabId);
-    scrollToSection(event, tabId);
+    scrollToSection(tabId);
   };
 
-  const scrollToSection = (event, sectionId) => {
-    event.preventDefault(); // Prevent default anchor behavior
-
+  const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
+
     if (section) {
-      let offset = 0;
-      if (sectionId === "presentation") {
-        offset = 100;
-      } else if (sectionId === "portfolio") {
-        offset = 150;
-      }
+      const offset = calculateOffset(sectionId);
+
       window.scrollTo({
-        top: section.offsetTop - offset, // Adjust the offset as needed
+        top: section.offsetTop - offset,
         behavior: "smooth"
       });
     }
   };
 
+  const calculateOffset = (sectionId) => {
+    switch (sectionId) {
+      case "presentation":
+        return 100;
+      case "portfolio":
+        return 150;
+      case "contact":
+        return 100;
+      default:
+        return 0;
+    }
+  };
+
+  const determineSection = (scrollPosition) => {
+    if (scrollPosition >= 370 && scrollPosition < 920) {
+      return "presentation";
+    } else if (scrollPosition >= 921 && scrollPosition < 2275) {
+      return "portfolio";
+    } else if (scrollPosition >= 2275 && scrollPosition < 2386) {
+      return "contact";
+    } else {
+      return "";
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      const presentationSection = document.getElementById("presentation");
-      const portfolioSection = document.getElementById("portfolio");
-      const contactSection = document.getElementById("contact");
-
+      // Code to determine the active tab based on scroll position
       const scrollPosition = window.scrollY;
-
-      if (
-        scrollPosition >= presentationSection.offsetTop - 100 &&
-        scrollPosition < portfolioSection.offsetTop - 150
-      ) {
-        setActiveTab("presentation");
-      } else if (
-        scrollPosition >= portfolioSection.offsetTop - 150 &&
-        scrollPosition < contactSection.offsetTop - 100
-      ) {
-        setActiveTab("portfolio");
-      } else {
-        setActiveTab("contact");
-      }
+      setActiveTab(determineSection(scrollPosition));
     };
 
     // Call handleScroll once to set the initial active tab
     handleScroll();
 
+    // Add event listener for scroll events
     window.addEventListener("scroll", handleScroll);
 
+    // Clean up: remove event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -63,7 +70,6 @@ export const Navigation = (props) => {
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="col-xs-6 col-md-3 text-center">
         <img src="img/logo-agc.jpg" alt="" className="logo" />
-        {/* <h4 className="sigle">Aurore Grandsire Carrelage</h4> */}
       </div>
       <div className="container">
         <div className="collapse navbar-collapse">
