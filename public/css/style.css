@@ -153,6 +153,90 @@ hr {
 .navbar-default .navbar-toggle:hover > .icon-bar {
   background-color: #608dfd;
 }
+
+@media (max-width: 450px) {
+  #menu {
+    padding: 10px;
+  }
+  #menu .col-xs-6 {
+    width: 30% !important;
+    padding-left: 10px !important;
+    padding-top: 5px;
+  }
+  #menu img {
+    max-width: 70px !important;
+  }
+  #menu .collapse {
+    display: flex;
+  }
+  #menu .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #menu .navbar-collapse {
+    padding: 0px !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  #menu .navbar-nav > li > a {
+    padding: 6px 0 !important;
+    font-size: 13px !important;
+    line-height: 16px;
+  }
+
+  #menu .navbar-nav > li {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  #header {
+    padding-top: 8.6em !important;
+  }
+  #header .carousel .carousel-status {
+    display: none !important;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  #presentation {
+    padding: 40 0 !important;
+    text-align: center;
+  }
+  #presentation h2::after {
+    margin-left: -30px;
+    left: 50% !important;
+  }
+  #presentation .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #presentation .row > div {
+    width: 100%;
+  }
+  #presentation p {
+    font-size: 16px !important;
+    text-align: justify;
+    padding: 0 10 0 10;
+  }
+  #presentation .list-style {
+    font-size: 16px !important;
+  }
+  #presentation img {
+    width: 350px !important;
+    margin: 0 auto;
+  }
+  #portfolio p {
+    font-size: 16px !important;
+  }
+  .section-title {
+    margin-bottom: 20px !important;
+  }
+}
+
 .section-title {
   margin-bottom: 70px;
 }
@@ -265,6 +349,7 @@ header .intro-text {
   padding-bottom: 15px;
   color: #fff !important;
   font-weight: 600 !important;
+  padding-top: 10px;
 }
 #presentation h2::after {
   position: absolute;
@@ -299,9 +384,13 @@ header .intro-text {
   border: 1px solid #fff;
 }
 #presentation p {
-  line-height: 24px;
+  line-height: 28px;
+  font-size: 18px;
   margin: 30px 0;
   color: #fff !important;
+}
+#presentation .list-style {
+  font-size: 18px;
 }
 /* Portfolio Section */
 #portfolio {
@@ -503,7 +592,7 @@ label {
 
 @media (max-width: 768px) {
   #presentation img {
-    margin: 50px 0;
+    margin-top: 30px;
   }
 }
 

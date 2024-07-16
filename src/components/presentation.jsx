@@ -1,6 +1,15 @@
 import React from "react";
 
 export const Presentation = (props) => {
+  const formatTextWithLineBreaks = (text) => {
+    return text.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div id="presentation">
       <div className="container">
@@ -12,7 +21,7 @@ export const Presentation = (props) => {
           <div className="col-xs-12 col-md-6">
             <div className="presentation-text">
               <h2>Présentation</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
+              <p>{props.data ? formatTextWithLineBreaks(props.data.paragraph) : "loading..."}</p>
               <h3>Services</h3>
               <div className="list-style">
                 <div className="col-lg-6 col-sm-6 col-xs-12">
