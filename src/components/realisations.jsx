@@ -1,4 +1,4 @@
-import { Image } from "./image";
+import { ResponsiveCarousel } from "./responsive-carousel";
 import React from "react";
 
 export const Realisations = (props) => {
@@ -7,27 +7,10 @@ export const Realisations = (props) => {
       <div className="container">
         <div className="section-title">
           <h2>Réalisations</h2>
-          <p>
-          Découvrez ici quelques exemples de mes réalisations passées.
-          </p>
+          <p>Découvrez ici quelques exemples de mes réalisations passées.</p>
         </div>
         <div className="row">
-          <div className="portfolio-items">
-            {props.data
-              ? props.data.map((d, i) => (
-                  <div
-                    key={`${d.title}-${i}`}
-                    className="col-sm-6 col-md-4 col-lg-4"
-                  >
-                    <Image
-                      title={d.title}
-                      largeImage={d.largeImage}
-                      smallImage={d.smallImage}
-                    />
-                  </div>
-                ))
-              : "Loading..."}
-          </div>
+          {props.data ? <ResponsiveCarousel data={props.data} /> : "Loading..."}
         </div>
       </div>
     </div>
