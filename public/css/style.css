@@ -155,6 +155,9 @@ hr {
 }
 
 @media (max-width: 450px) {
+  #menu.navbar-default .navbar-nav > li > a {
+    margin: 0 1em 0 1em;
+  }
   #menu {
     padding: 10px;
   }
@@ -183,7 +186,7 @@ hr {
 
   #menu .navbar-nav > li > a {
     padding: 6px 0 !important;
-    font-size: 13px !important;
+    font-size: 1em !important;
     line-height: 16px;
   }
 
@@ -279,8 +282,14 @@ hr {
 
 /* Responsive Styling for Small Devices */
 @media only screen and (max-width: 450px) {
+  #presentation p {
+    font-size: 1.15em !important;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+
   .modal-image {
-    margin-top: -10px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,20 +335,204 @@ hr {
   }
 
 /* Additional Specific Styling for Landscape Mode if needed */
-@media only screen and (max-width: 450px) and (orientation: landscape) {
-  .modal-image {
-    margin-top: -10px !important;
-  }
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+  .carousel .slide img {
+    width: 60% !important;
+}
+
+  .modal-close-button {
+    display: block !important;
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it is above the modal content */
+    }
 
   .modal-content-image {
     max-width: 90% !important;
     max-height: 80vh;
+    margin: auto;
   }
 
   .modal-content-image img {
     max-width: 100%;
     max-height: 80vh;
   }
+
+  #presentation img {
+    width: 45vw !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    border: 0.1vw solid #fff !important;
+  }
+
+  #presentation .col-xs-12 {
+    width: 50% !important;
+  }
+
+  #presentation {
+    padding-top: 4vw !important;
+    padding-bottom: 3vw !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #presentation p {
+    font-size: 1.15em !important;
+    text-align: justify;
+  }
+  #presentation .list-style {
+    font-size: 1.15em !important;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  .container {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-right: 3.2vw !important;
+      padding-left : 3.2vw !important;
+      width: 100vw !important;
+  }
+
+  #presentation .landscape-padding {
+    padding-bottom: 4vw;
+  }
+
+  .section-title {
+    margin-bottom: 4vw !important;
+  }
+
+  .section-title p {
+    font-size: 1.15em !important;
+  }
+
+  .section-title h2 {
+    position: relative;
+    margin-top: 1vw !important;
+    margin-bottom: 1.5vw !important;
+    padding-bottom: 1.5vw !important;
+  }
+
+  #portfolio {
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 5vw !important;
+  }
+
+  #presentation h2 {
+    position: relative;
+    margin-bottom: 1.5vw !important;
+    padding-bottom: 1.5vw !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding-top: 2vw !important;
+  }
+
+  #menu {
+    padding: 1.5vw !important;
+  }
+
+  #contact {
+    padding: 3vw 0 3vw !important;
+  }
+
+  #services .landscape-mode li {
+    margin-bottom: 0.6vw !important;
+  }
+
+  #contact form {
+    padding-top: 0.5vw !important;
+  }
+
+  #contact .form-control {
+    padding: 0.6vw 1.2vw !important;
+    font-size: 1.15em !important;
+    border: 0.1vw solid #ddd !important;
+  }
+
+  .form-group {
+    margin-bottom: 1.5vw !important;
+  }
+
+  .help-block {
+    margin-top: 0.5vw !important;
+    margin-bottom: 1vw !important;
+  }
+
+  #contact h2 {
+    text-align: center !important;
+  }
+
+  #contact h2::after {
+    margin-left: -30px;
+    left: 50% !important;
+  }
+
+  #contact .btn-custom {
+    border: 0.2vw solid #fff !important;
+    display: block;
+    margin: 3vw auto !important;
+  }
+
+  #contact h3 {
+    margin-top: 0 !important;
+    margin-bottom: 2.5vw !important;
+    padding-bottom: 0 !important;
+  }
+
+  #contact .contact-item {
+    margin: 2vw 0 !important;
+    text-align: center !important;
+  }
+
+  #contact .social {
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.15) !important;
+    padding-top: 3vw !important;
+    margin-top: 0.5vw !important;
+    text-align: center;
+  }
+
+  #footer p {
+    padding-top: 1.5vw !important;
+    font-size: 1em !important;
+  }
+
+  .modal-image {
+    margin-top: 13.5vw !important;
+  }
+
+  .modal-content-image img {
+    max-height: 70vh !important;
+  }
+}
+
+#services .landscape-mode {
+  width: 100% !important;
+}
+
+#services h3 {
+  text-align: center;
+}
+
+#services .landscape-mode li {
+  margin-bottom: 6px;
+  list-style: none;
+  color: #fff !important;
+  text-align: center;
+}
+
+#services .landscape-mode li:before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  color: #B7625D;
+  font-size: 11px;
+  font-weight: 300;
+  padding-right: 8px;
 }
 
 .section-title {
@@ -489,7 +682,7 @@ header .intro-text {
   border: 1px solid #fff;
 }
 #presentation p {
-  line-height: 28px;
+  line-height: 2em;
   font-size: 18px;
   margin: 30px 0;
   color: #fff !important;
@@ -698,6 +891,76 @@ label {
 @media (max-width: 768px) {
   #presentation img {
     margin-top: 30px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 780px) {
+  .navbar-right {
+      /* margin-right: -3vw !important; */
+  }
+}
+
+@media (min-width: 650px) and (max-width: 768px) and (orientation: landscape) {
+  #presentation p {
+    font-size: 1em !important;
+    margin: 1vw 0;
+  }
+  #presentation img {
+    margin-top: 3vw;
+  }
+  #presentation h2 {
+    font-size: 1.6em;
+  }
+  #portfolio h2 {
+    font-size: 1.6em;
+  }
+  .section-title p {
+    font-size: 1em !important;
+  }
+  #presentation .list-style {
+    font-size: 1em !important;
+  }
+  #menu img.logo {
+    max-width: 16vh !important;
+  }
+  #menu .collapse {
+    display: flex;
+    justify-content: flex-end !important;
+  }
+  #menu .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #menu .navbar-collapse {
+    padding: 1vw 0 0 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  #menu .navbar-nav > li > a {
+    padding: 6px 0 !important;
+    font-size: 13px !important;
+    line-height: 16px;
+  }
+
+  #menu .navbar-nav > li {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  #contact h2 {
+    font-size: 1.6em;
+  }
+
+  #contact .form-control {
+    font-size: 1em !important;
+  }
+
+  .btn-custom {
+    font-size: 1.2em;
   }
 }
 

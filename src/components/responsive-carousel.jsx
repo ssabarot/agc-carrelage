@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carous
 import { Image } from "./image";
 
 export const ResponsiveCarousel = ({ data }) => {
-  const isSmallScreen = window.innerWidth <= 450;
+  const isSmallScreen = window.innerWidth <= 950;
 
   return (
     <div className="responsive-carousel">

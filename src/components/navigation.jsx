@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export const Navigation = (props) => {
   const [activeTab, setActiveTab] = useState("");
+  const [isLandscape, setIsLandscape] = useState(window.matchMedia("(orientation: landscape)").matches);
 
   const handleTabClick = (event, tabId) => {
     event.preventDefault(); // Prevent default anchor behavior
@@ -66,9 +67,23 @@ export const Navigation = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleOrientationChange = (e) => {
+      setIsLandscape(e.matches);
+    };
+
+    const landscapeMediaQuery = window.matchMedia("(orientation: landscape)");
+    landscapeMediaQuery.addEventListener("change", handleOrientationChange);
+
+    // Clean up: remove event listener when component unmounts
+    return () => {
+      landscapeMediaQuery.removeEventListener("change", handleOrientationChange);
+    };
+  }, []);
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
-      <div className="col-xs-6 col-md-3 text-center">
+      <div className={`${isLandscape ? "" : "col-xs-6"} col-md-3 text-center`}>
         <img src="img/logo-agc.jpg" alt="" className="logo" />
       </div>
       <div className="container">
