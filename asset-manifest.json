@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/agc-carrelage/static/css/main.ce83cb56.css",
+    "main.js": "/agc-carrelage/static/js/main.aab47e10.js",
+    "index.html": "/agc-carrelage/index.html",
+    "main.ce83cb56.css.map": "/agc-carrelage/static/css/main.ce83cb56.css.map",
+    "main.aab47e10.js.map": "/agc-carrelage/static/js/main.aab47e10.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce83cb56.css",
+    "static/js/main.aab47e10.js"
+  ]
+}
