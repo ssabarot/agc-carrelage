@@ -336,9 +336,9 @@ hr {
 
 /* Additional Specific Styling for Landscape Mode if needed */
 @media only screen and (max-width: 950px) and (orientation: landscape) {
-  .carousel .slide img {
+  #portfolio .responsive-carousel .carousel .slide img {
     width: 60% !important;
-}
+  }
 
   .modal-close-button {
     display: block !important;
